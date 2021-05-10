@@ -1,18 +1,31 @@
-import React from 'react'
-import './styles.scss'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./styles.scss";
 
-import Logo from '../../assets/logo.png'
+import Logo from "../../assets/logo.png";
 
 const Header = (props) => {
-    return (
-        <header className="header">
-            <div className="wrap">
-                <div className="logo">
-                    <img src={Logo} alt="App logo" />
-                </div>
-            </div>
-        </header>
-    )
-}
+  return (
+    <header className="header">
+      <div className="wrap">
+        <div className="logo">
+            <Link to="/">
+                <img src={Logo} alt="App logo" />
+            </Link>
+        </div>
 
-export default Header
+        <div className="callToActions">
+            <ul>
+                <li>
+                    <Link to="/registration">
+                        Registration
+                    </Link>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
